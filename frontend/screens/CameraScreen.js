@@ -36,7 +36,7 @@ export default function CameraScreen() {
         type: 'image/jpeg',
       });
       console.log(formData);
-      const response = await fetch('http://192.168.100.118:3000/guardar-ticket', {
+      const response = await fetch('https://cloudp3-backend-lgloria-beesaacreqg3fuax.eastus-01.azurewebsites.net/guardar-ticket', {
         method: 'POST',
         body: formData, 
       });
@@ -80,7 +80,7 @@ export default function CameraScreen() {
         type: 'image/jpeg',
       });
       console.log(formData);
-      const response = await fetch('http://192.168.100.118:3000/guardar-ticket', {
+      const response = await fetch('https://cloudp3-backend-lgloria-beesaacreqg3fuax.eastus-01.azurewebsites.net/guardar-ticket', {
         method: 'POST',
         body: formData, 
       });
