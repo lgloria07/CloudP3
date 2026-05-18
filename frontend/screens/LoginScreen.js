@@ -21,12 +21,14 @@ export default function LoginScreen({ navigation }) {
 
       <TextInput
         placeholder="Correo"
+        placeholderTextColor="#64748B"
         style={styles.input}
         onChangeText={setEmail}
       />
 
       <TextInput
         placeholder="Contraseña"
+        placeholderTextColor="#64748B"
         secureTextEntry
         style={styles.input}
         onChangeText={setPassword}
@@ -61,7 +63,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 15,
     borderRadius: 12,
-    marginBottom: 15
+    marginBottom: 15,
+    color: '#000',
   },
 
   button: {

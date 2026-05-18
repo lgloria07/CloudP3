@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { dataSimulation } from '../services/dataSimulation';
 import { AppContext } from '../services/AppContext';
@@ -45,7 +45,15 @@ export default function CameraScreen() {
       console.log(responseJson);
       if(responseJson.value){
         console.log("Se almaceno la imagen del ticket en blob storage de forma correcta y se realizo el analisis correctamente");
-        addTicket(responseJson.ticket);
+        const fechaActual = new Date().toLocaleDateString('es-MX');
+
+        const ticketConFechaActual = {
+          ...responseJson.ticket,
+          fecha: fechaActual
+        };
+
+        addTicket(ticketConFechaActual);
+        Alert.alert("Ticket registrado","El ticket se analizó y guardó correctamente");
         console.log(responseJson.ticket);
       }else{
         console.log("No se pudo almacenar la imagen del ticket en blob storage o no se pudo realizar el analisis correctamente");
@@ -89,7 +97,15 @@ export default function CameraScreen() {
       console.log(responseJson);
       if(responseJson.value){
         console.log("Se almaceno la imagen del ticket en blob storage de forma correcta y se realizo el analisis correctamente");
-        addTicket(responseJson.ticket);
+        const fechaActual = new Date().toLocaleDateString('es-MX');
+
+        const ticketConFechaActual = {
+          ...responseJson.ticket,
+          fecha: fechaActual
+        };
+
+        addTicket(ticketConFechaActual);
+        Alert.alert("Ticket registrado","El ticket se analizó y guardó correctamente");
         console.log(responseJson.ticket); 
       }else{
         console.log("No se pudo almacenar la imagen del ticket en blob storage o no se pudo realizar el analisis correctamente");
